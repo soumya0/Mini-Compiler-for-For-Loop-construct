@@ -1,0 +1,105 @@
+Initial grammar for first and follow set is:
+
+['start', ' header  main ']
+['header', ' HINCLUDE LE LIBNAME GE ']
+['main', ' INT MAIN SBO SBC CBO body CBC | INT MAIN SBO SBC CBO CBC']
+['body', ' stmt  body | stmt']
+['stmt', ' decl SEMI | assgn SEMI |ctrlstmt']
+['decl ', ' type names ']
+['type ', ' INT | FLOAT |DOUBLE |CHAR ']
+['names ', ' name COMMA names | name  ']
+['name ', ' ID | ID EQ NUM ']
+['assgn ', ' ID EQ NUM | ID EQ ID | ID INCOP |ID DECOP']
+['ctrlstmt ', ' WHILE SBO relstmt SBC CBO body CBC | WHILE SBO relstmt SBC stmt ']
+['relstmt', ' ID relop ID| ID relop NUM  ']
+['relop ', ' LE |LEQ | GE |GEQ |NEQ |EQ |DEQ']
+
+
+**********************************
+
+First for th given grammar is:
+
+First (start) :  set(['HINCLUDE'])
+
+
+First (header) :  set(['HINCLUDE'])
+
+
+First (main) :  set(['INT'])
+
+
+First (body) :  set(['INT', 'DOUBLE', 'FLOAT', 'CHAR', 'WHILE', 'ID'])
+
+
+First (stmt) :  set(['CHAR', 'WHILE', 'INT', 'DOUBLE', 'FLOAT', 'ID'])
+
+
+First (decl) :  set(['INT', 'DOUBLE', 'FLOAT', 'CHAR'])
+
+
+First (type) :  set(['INT', 'DOUBLE', 'FLOAT', 'CHAR'])
+
+
+First (names) :  set(['ID'])
+
+
+First (name) :  set(['ID'])
+
+
+First (assgn) :  set(['ID'])
+
+
+First (ctrlstmt) :  set(['WHILE'])
+
+
+First (relstmt) :  set(['ID'])
+
+
+First (relop) :  set(['GEQ', 'LE', 'DEQ', 'LEQ', 'GE', 'EQ', 'NEQ'])
+
+
+**********************************
+
+Follow set for the given grammar is:
+
+Follow (start) :  set(['$'])
+
+
+Follow (header) :  set(['INT'])
+
+
+Follow (main) :  set(['$'])
+
+
+Follow (body) :  set(['CBC'])
+
+
+Follow (stmt) :  set(['CBC', 'INT', 'DOUBLE', 'FLOAT', 'CHAR', 'WHILE', 'ID'])
+
+
+Follow (decl) :  set(['SEMI'])
+
+
+Follow (type) :  set(['ID'])
+
+
+Follow (names) :  set(['SEMI'])
+
+
+Follow (name) :  set(['COMMA', 'SEMI'])
+
+
+Follow (assgn) :  set(['SEMI'])
+
+
+Follow (ctrlstmt) :  set(['CBC', 'INT', 'DOUBLE', 'FLOAT', 'CHAR', 'WHILE', 'ID'])
+
+
+Follow (relstmt) :  set(['SBC'])
+
+
+Follow (relop) :  set(['NUM', 'ID'])
+
+
+**********************************
+

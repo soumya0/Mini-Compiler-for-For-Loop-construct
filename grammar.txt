@@ -1,0 +1,26 @@
+start: header  main 
+
+header: HINCLUDE LE LIBNAME GE 
+
+main: INT MAIN SBO SBC CBO body CBC | INT MAIN SBO SBC CBO CBC
+
+body: stmt  body | stmt
+
+stmt: decl SEMI | assgn SEMI |ctrlstmt
+
+decl : type names 
+
+type : INT | FLOAT |DOUBLE |CHAR 
+
+names : name COMMA names | name  
+
+name : ID | ID EQ NUM 
+
+assgn : ID EQ NUM | ID EQ ID | ID INCOP |ID DECOP
+
+ctrlstmt : WHILE SBO relstmt SBC CBO body CBC | WHILE SBO relstmt SBC stmt 
+	
+relstmt: ID relop ID| ID relop NUM  
+
+relop : LE |LEQ | GE |GEQ |NEQ |EQ |DEQ 
+	

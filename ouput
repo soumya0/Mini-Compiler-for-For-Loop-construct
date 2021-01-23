@@ -1,0 +1,15 @@
+name: OPERATOR, value: <, line_number: 1
+name: OPERATOR, value: >, line_number: 1
+name: KEYWORD, value: int, line_number: 2
+name: KEYWORD, value: main, line_number: 2
+name: IDENTIFIER, value: i, line_number: 9
+name: IDENTIFIER, value: j, line_number: 9
+name: IDENTIFIER, value: d, line_number: 9
+name: OPERATOR, value: =, line_number: 9
+name: DIGIT, value: 10, line_number: 9
+name: KEYWORD, value: while, line_number: 10
+name: DIGIT, value: 11, line_number: 12
+name: DIGIT, value: 0, line_number: 13
+name: DIGIT, value: 12, line_number: 14
+name: OPERATOR, value: ++, line_number: 15
+Successfully parsed the given program
